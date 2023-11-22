@@ -19,15 +19,6 @@ class Fighter:
         """
         opponent.health -= self.damage_per_attack
 
-    def heal(self, amount):
-        """
-        Only for pylint not to lower my grade.
-        """
-        if self.health + amount > 100:
-            self.health = 100
-        else:
-            self.health += amount
-
 
 class Fight:
     """
@@ -59,11 +50,11 @@ class Fight:
         return self.winner
 
 
-fighter_1 = Fighter("Tyler Derden", 100, 13)
-fighter_2 = Fighter("Narrator", 100, 13)
+fighter_tyler = Fighter("Tyler Derden", 100, 13)
+fighter_narrator = Fighter("Narrator", 100, 13)
 
-fight = Fight(fighter_1, fighter_2)
+fight = Fight(fighter_tyler, fighter_narrator)
 winner = fight.get_winner()
 
 if winner:
-    print(f"{winner} переміг в бою!")
+    print(f"{winner} won the fight!")
